@@ -8,7 +8,8 @@ return {
     'hrsh7th/nvim-cmp',
     'L3MON4D3/LuaSnip',
     'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim'
+    'williamboman/mason-lspconfig.nvim',
+    'onsails/lspkind-nvim'
   },
   opts = {}
 }
