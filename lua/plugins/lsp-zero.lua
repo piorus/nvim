@@ -29,7 +29,7 @@ return {
       },
     })
 
-    require('lspconfig').intelephense.setup({})
+    --require('lspconfig').intelephense.setup({})
 
     local luasnip = require("luasnip")
     local types = require("luasnip.util.types")
