@@ -1,4 +1,3 @@
---- https://github.com/ray-x/go.nvim
 return {
   "ray-x/go.nvim",
   dependencies = {  -- optional packages

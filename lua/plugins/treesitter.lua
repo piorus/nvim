@@ -13,14 +13,6 @@ return {
     config = function()
         local treesitter = require("nvim-treesitter.configs")
 
-        vim.api.nvim_create_autocmd("FileType", {
-            pattern = {"markdown"},
-            callback = function(ev)
-                -- treesitter-context is buggy with Markdown files
-                require("treesitter-context").disable()
-            end
-        })
-
         treesitter.setup({
             ensure_installed = {
                 "csv", "dockerfile", "gitignore", "go", "gomod", "gosum",
