@@ -8,7 +8,6 @@ return {
     'L3MON4D3/LuaSnip',
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
-    'onsails/lspkind-nvim'
   },
   config = function()
     local lsp_zero = require('lsp-zero')
@@ -33,7 +32,6 @@ return {
 
     local luasnip = require("luasnip")
     local cmp = require("cmp")
-    local lspkind = require("lspkind")
     cmp.setup({
         snippet = {
             expand = function(args)

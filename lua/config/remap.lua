@@ -25,3 +25,6 @@ vim.keymap.set("n", "<A-0>", "<cmd>BufferLast<CR>")
 vim.keymap.set("n", "<A-p>", "<cmd>BufferPin<CR>")
 vim.keymap.set("n", "<A-q>", "<cmd>BufferClose<CR>")
 vim.keymap.set("n", "<A-w>", "<cmd>BufferCloseAllButCurrent<CR>")
+
+--- ray-x/go
+vim.keymap.set("n", "<A-r>", "<cmd>GoRun %<CR>")
