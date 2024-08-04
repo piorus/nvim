@@ -1,5 +1,7 @@
 local opts = {noremap = true, silent = true}
 
+vim.g.mapleader = "<Space>"
+
 --- Telescope
 local telescope = require("telescope.builtin")
 vim.keymap.set("n", "-", ":Telescope file_browser<CR>")
