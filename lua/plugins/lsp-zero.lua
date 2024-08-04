@@ -19,6 +19,8 @@ return {
       -- to learn the available actions
       lsp_zero.default_keymaps({buffer = bufnr})
     end)
+    
+    lsp_zero.set_preferences({sign_icons = { } })
 
     require('mason').setup({})
     require('mason-lspconfig').setup({
@@ -28,8 +30,6 @@ return {
         end,
       },
     })
-
-    --require('lspconfig').intelephense.setup({})
 
     local luasnip = require("luasnip")
     local types = require("luasnip.util.types")
