@@ -2,7 +2,6 @@
 return {
   'VonHeikemen/lsp-zero.nvim',
   dependencies = {
-    'folke/tokyonight.nvim',
     'neovim/nvim-lspconfig',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/nvim-cmp',
@@ -13,13 +12,14 @@ return {
   },
   config = function()
     local lsp_zero = require('lsp-zero')
-    lsp_zero.extend_lspconfig()
-    lsp_zero.on_attach(function(client, bufnr)
-      -- see :help lsp-zero-keybindings
-      -- to learn the available actions
-      lsp_zero.default_keymaps({buffer = bufnr})
-    end)
     
+    local lsp_attach = function(client, bufnr)
+      lsp_zero.default_keymaps({buffer = bufnr})
+    end
+    lsp_zero.extend_lspconfig({
+      lsp_attach = lsp_attach,
+    })
+
     lsp_zero.set_preferences({sign_icons = { } })
 
     require('mason').setup({})
@@ -32,17 +32,6 @@ return {
     })
 
     local luasnip = require("luasnip")
-    local types = require("luasnip.util.types")
-    luasnip.config.setup({
-      ext_opts = {
-          [types.choiceNode] = {
-              active = {virt_text = {{"⇥", "GruvboxRed"}}}
-          },
-          [types.insertNode] = {
-              active = {virt_text = {{"⇥", "GruvboxBlue"}}}
-          }
-      }
-    })
     local cmp = require("cmp")
     local lspkind = require("lspkind")
     cmp.setup({
@@ -74,13 +63,6 @@ return {
         sources = cmp.config.sources({
             {name = "nvim_lsp"}, {name = "luasnip"}, {name = "buffer"}
         }),
-        formatting = {
-            format = lspkind.cmp_format({
-                mode = "symbol_text",
-                maxwidth = 70,
-                show_labelDetails = true
-            })
-        },
         snippet = {
           expand = function(args)
             require('luasnip').lsp_expand(args.body)

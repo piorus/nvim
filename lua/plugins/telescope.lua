@@ -20,8 +20,8 @@ return {
                   i = {
                       ["<C-k>"] = actions.move_selection_previous, -- move to prev result
                       ["<C-j>"] = actions.move_selection_next, -- move to next result
-                      ["<C-q>"] = actions.send_selected_to_qflist +
-                          actions.open_qflist -- send selected to quickfixlist
+                      ["<C-q>"] = actions.send_selected_to_qflist
+  --                        actions.open_qflist -- send selected to quickfixlist
                   }
               }
           },
@@ -41,18 +41,5 @@ return {
 
       telescope.load_extension("fzf")
       telescope.load_extension("file_browser")
-
-      local builtin = require("telescope.builtin")
-
-      -- key maps
-
-      local map = vim.keymap.set
-      local opts = {noremap = true, silent = true}
-
-      map("n", "-", ":Telescope file_browser<CR>")
-
-      map("n", "<leader>ff", builtin.find_files, opts) -- Lists files in your current working directory, respects .gitignore
-      map("n", "<leader>fx", builtin.treesitter, opts) -- Lists tree-sitter symbols
-      map("n", "<leader>fs", builtin.spell_suggest, opts) -- Lists spell options
   end
 }
