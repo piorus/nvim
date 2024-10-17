@@ -27,5 +27,5 @@ vim.keymap.set("n", "<A-w>", "<cmd>BufferCloseAllButCurrent<CR>")
 --- ray-x/go
 local go_format = require("go.format")
 
-vim.keymap.set("n", "<A-r>", "<cmd>GoRun % -a -l\\ -c\\ /home/piorus/code/coding-challenges-in-go/cmd/001-wc/test.txt<CR>")
+--- vim.keymap.set("n", "<A-r>", "<cmd>GoRun % -a -l\\ -c\\ /home/piorus/code/coding-challenges-in-go/cmd/001-wc/test.txt<CR>")
 vim.keymap.set("n", "<C-f>", go_format.goimports)
