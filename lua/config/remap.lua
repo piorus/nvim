@@ -1,8 +1,8 @@
 --- Telescope
 local telescope = require("telescope.builtin")
 vim.keymap.set("n", "-", ":Telescope file_browser<CR>")
-vim.keymap.set("n", "<leader>ff", telescope.find_files) -- Lists files in your current working directory, respects .gitignore
-vim.keymap.set("n", "<leader>fx", telescope.treesitter) -- Lists tree-sitter symbols
+vim.keymap.set("n", "<leader>ff", telescope.find_files)    -- Lists files in your current working directory, respects .gitignore
+vim.keymap.set("n", "<leader>fx", telescope.treesitter)    -- Lists tree-sitter symbols
 vim.keymap.set("n", "<leader>fs", telescope.spell_suggest) -- Lists spell options
 
 --- Barbar
