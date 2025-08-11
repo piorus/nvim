@@ -10,17 +10,6 @@ return {
     'williamboman/mason-lspconfig.nvim',
   },
   config = function()
-    local lsp_zero = require('lsp-zero')
-
-    local lsp_attach = function(client, bufnr)
-      lsp_zero.default_keymaps({ buffer = bufnr })
-    end
-    lsp_zero.extend_lspconfig({
-      lsp_attach = lsp_attach,
-    })
-
-    lsp_zero.set_preferences({ sign_icons = {} })
-
     require('mason').setup({})
     require('mason-lspconfig').setup({
       handlers = {
